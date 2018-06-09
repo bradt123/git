@@ -1,0 +1,20 @@
+body{
+	background-color: rgba(0,133,255,0.4); 
+
+}
+header{
+	margin-top: 20px;
+	border: 2px solid;
+}
+section{
+	margin-top: 40px 100px 0 0;
+}
+aside{
+	float: right;
+	margin-left: 500px;
+	border: 2px solid;
+}
+footer{
+	margin: ;
+	border: 2px solid;	
+}
