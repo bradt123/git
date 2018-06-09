@@ -6,23 +6,20 @@
 	<title>Practica GIT</title>
 	<link rel="stylesheet" href="">
 	<script src="j.js" type="text/javascript" charset="utf-8" async defer></script>
-	<style type="text/css" media="screen">
-	body{
-		background-color: rgba(0,255,0, 0.4);
-	}
-		ul{
-			text-transform: uppercase;
-		}
-	</style>
+
 </head>
-<body id="b">
-	<h1>Titulo de Documento HTML51</h1>
-	<div class="co">
-		<h3>Diagrama de Prueba</h3>
-		<ul>
-			<li>terminos de logistica</li>
-		</ul>
-		<input type="button" name="boton" onclick="change()" value="Boton">
-	</div>
+<body>
+<h1>My First Dynamic Web Page</h1>
+<p id="demo">Select a color:</p>
+<p>
+<button onclick="changeBackground('green')">Green</button>
+<button onclick="changeBackground('red')">Red</button>
+<button onclick="changeBackground('orange')">Orange</button>
+</p>
+<p>
+<input type="range" id="red" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:red"> Red<br>
+<input type="range" id="green" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:green"> Green<br>
+<input type="range" id="blue" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:blue"> Blue
+</p>
 </body>
 </html>
