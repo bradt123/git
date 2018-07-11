@@ -20,4 +20,7 @@ function dh(d) { // decimal to hex conversion
     if (hex.length < 2) hex = "0" + hex;
     return hex;
 }
+var hola=function(){
+	alert('message?: DOMString');
+}
 
