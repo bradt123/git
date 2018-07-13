@@ -279,6 +279,73 @@ Ext.onReady(function () {
                 autoShow: true
         });
 });
+======================================================================
 
+         Ext.onReady(function() {
+            Ext.create('Ext.container.Container', {
+               renderTo : Ext.getBody(),
+               layout : 'column' ,
+               width : 700,
+               bodyStyle:'padding:5px 5px 0',
+               defaults: {      // defaults applied to items
+               layout: 'form',
+               border: false,
+               bodyStyle: 'padding:4px'
+            },
+            
+items : [
+                {
+                    xtype: 'fieldset',
+                    border: false,
+                    defaultType: 'textfield',
+                    columnWidth: .5,
+                anchor: '100%',
+                labelWidth: 130,
+                labelStyle: 'font-weight:bold',
+                labelAlign: 'right',
+                    layout: 'anchor',
+                    items: [
+                        {
+                            fieldLabel: 'FullName',
+                            name: 'FullName'
+                        },
+                        {
+                            fieldLabel: 'City',
+                            name: 'City'
+                        },
+                        {
+                            fieldLabel: 'RegAddress',
+                            name: 'RegAddress'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldset',
+                    border: false,
+                    defaultType: 'textfield',
+                    columnWidth: .5,
+                anchor: '100%',
+                labelWidth: 130,
+                labelStyle: 'font-weight:bold',
+                labelAlign: 'right',
+                    layout: 'anchor',
+                    items: [
+                        {
+                            fieldLabel: 'JobDescription',
+                            name: 'JobDescription'
+                        },
+                        {
+                            fieldLabel: 'ContactPerson',
+                            name: 'ContactPerson'
+                        },
+                        {
+                            fieldLabel: 'OriginatorName',
+                            name: 'OriginatorName'
+                        }
+                    ]
+                }
+            ]
+            });
+         });
 
     
