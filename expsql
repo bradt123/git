@@ -1,0 +1,67 @@
+==========elimina etiqueta html manteniento las etiquetas de lista===========
+CREATE OR REPLACE FUNCTION strip_tags(TEXT) RETURNS TEXT AS $$
+     SELECT regexp_replace(
+        regexp_replace($1, E'(?x)<[^>]*?(\s alt \s* = \s* ([\'"]) ([^>]*?) \2) [^>]*? >', E'\3'), 
+       E'(?x)(< [^>]*? >)', '', 'g')
+ $$ LANGUAGE SQL;
+ 
+ ==============================Posible con PHP================================
+ $nlFormat="item\nitem\nitem\n\nitem\nitem\nitem";
+$tmp_arr1= explode("\n\n",$nlFormat);
+$final_arr=array();
+// now $tmp_arr1 has n number of sections;
+foreach($tmp_arr1 as $section){
+    $final_arr[]= explode("\n",$section);
+}
+
+//var_dump($final_arr);
+
+$html="";
+foreach($final_arr as $section){
+    $html.="<ul><li>";
+    $html.=implode("</li><li>",$section);
+    $html.="</li></ul>";
+}
+echo $html;
+================================otro talves====================================
+$newul = preg_replace("/\r\n\r\n|\n\n|\r\r/", "</li></ul><ul><li>", $nlformat);
+
+================================probar parece====================================
+$string = "word1 dtas de todos. puede dser deword2. word3tu lado de misaword4.";
+$string = explode(".",$string);
+foreach ($string as $str) {
+  echo "<ol><li>".$str."</li></ol>";
+}
+---------------------------------------------------------------------------------
+$string = "word1 dtas de todos. puede dser deword2. word3tu lado de misaword4.";
+$myString = trim($string, '.');
+//echo $myString; 
+$string = explode(".",$myString);
+foreach ($string as $str) {
+  echo "<ol><li>".$str."</li></ol>";
+}
+================================para eliminar numeros de cadenas=================
+ $cadena="la casa tiene el numero 25 y tiene 1025m2.";
+echo preg_replace('/[0-9]+/', '', $cadena);
+
+=====Si lo que queréis es eliminar únicamente los números que están solos===========
+
+$cadena="la casa tiene el numero 25 y tiene 1025m2";
+echo preg_replace('/[ ][0-9]+[ ]/', ' ', $cadena);
+
+================================elimina las etiquetas HTML===========
+
+$text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
+echo strip_tags($text);
+====================================================================================
+
+
+
+
+
+
+
+
+
+
+
