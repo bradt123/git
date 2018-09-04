@@ -1,0 +1,12 @@
+git stash 
+
+================
+git stash save "nombre del guardado"
+
+git stash list //para ver las listas
+
+git stash apply@{numero} //volver a los cambio de la lista trae el stash seleccionado
+
+git stash apply stash@{0....n}
+
+git stash pop  ///para traer los cambios, trae el ultimo stash guardado
